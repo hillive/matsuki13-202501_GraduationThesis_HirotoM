@@ -1,0 +1,361 @@
+% -----------
+% プリアンブル
+%---------------
+\documentclass[a4j,11pt,dvipdfmx]{ujreport}
+
+% 使用するPackage
+\usepackage{mylatex}
+\usepackage{thesis-teu}
+
+% 注意書き用
+\textblockcolour{yellow}
+\setlength{\TPHorizModule}{10mm}
+\setlength{\TPVertModule}{10mm}
+\TPMargin{.2\TPHorizModule}
+
+% ヘッダ・フッタの設定
+\pagestyle{plain}
+
+%% 【変更】 題目: longtitleの人はthesis-teu.sty の該当箇所も修正する。
+%% \title{仮想空間での被ノックバック攻撃体験を張力による
+%%力覚フィードバックで提示するシステムによる没入感の向上
+%%}
+\longtitle{仮想空間での被ノックバック攻撃体験を張力による}{力覚フィードバックで提示するシステムによる没入感の向上}
+%%\longtitle{}{\gdef\@仮想空間での被ノックバック攻撃体験を張力による\gdef\@力覚フィードバックで提示するシステムによる没入感の向上}
+
+%% 【変更】 氏名など
+% \idnum C0119777
+% \idnum C0A20777
+\idnum C0B21185
+\author{松木~~陽豊}
+\advisor{井上~亮文~~~教授}    % 指導教員 (職位は任意)
+\date{2~0~2~4~年~1~月~2~2~日} % 提出日
+\nendo 2024
+\lab{井上} % 研究室名(例：青木・佐々木、石畑、生野 etc.)
+
+%% 学籍番号から専攻を判断する
+\schoolofcs
+
+%% 書き方ガイドの注釈の出力を切り替える。commentパッケージを利用している。
+%% 不要ならこのファイルおよびbody以下の　\begin{comment} - \end{comment}を消してください。
+% \includecomment{comment}    % (a) 注釈を出す
+% \excludecomment{comment}    % (b) 注釈を出さない
+% \includecomment{comment19}    % (a)のときに19年度注釈を出す
+% \excludecomment{comment19}    % (a)のときに19年度注釈を出さない
+% \includecomment{comment20}    % (a)のときに20年度注釈を出す
+% \excludecomment{comment20}    % (a)のときに20年度注釈を出さない
+
+%---------------
+% 本文
+%---------------
+\begin{document}
+
+
+% 外表紙コメント
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\textblockcolour{Lavender}
+\begin{textblock}{12.5}(0.5, 1)
+    \noindent
+    ピンクは重要項目、黄色はより良い論文にするための項目、緑は任意項目、青は補足説明、先頭の数字はチェックリストの番号に対応する
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{5}(0.5, 3)
+    【8】紙印刷の頃にあった
+
+    背表紙を作らない
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{4}(0.5, 8)
+    【6,10】タイトル
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{4}(0.5, 10)
+    【6,10】指導教員名
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{4}(0.5, 16.5)
+    【6,10】学部・研究室
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{4}(0.5, 19)
+    \noindent
+    【6,11】学籍番号・氏名
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{4}(16, 1)
+    【1】1枚目は「表紙」
+\end{textblock}
+
+\textblockcolour{lime}
+\begin{textblock}{4}(14, 11)
+    ↑職位の有無は任意
+\end{textblock}
+
+
+
+\begin{comment19}
+    \textblockcolour{pink}
+    \begin{textblock}{11}(8, 15)
+        ↓19年度入学生は学部の後に研究室名を記載する
+    \end{textblock}
+\end{comment19}
+
+\begin{comment20}
+    \textblockcolour{pink}
+    \begin{textblock}{7}(8, 14)
+        ↓20年度入学生は学部の後に専攻名、
+    
+        次の行に研究室名を記載する
+    \end{textblock}
+\end{comment20}
+
+\textblockcolour{pink}
+\begin{textblock}{6}(10, 19)
+    【12】学籍番号のA,B,Cは大文字
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{4}(12, 24)
+    【13】↑2024年度
+\end{textblock}
+
+\begin{textblock}{7}(11, 28)
+    ←外表紙にページ番号をつけない
+\end{textblock}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 外表紙
+\makecover
+
+
+% 内表紙コメント
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\textblockcolour{pink}
+\begin{textblock}{4}(16, 1)
+    \noindent
+    【2】2枚目は「内表紙」
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{8}(0.5, 6.5)
+    【6,10】タイトルが表紙・概要と同じか
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{4}(0.5, 12.5)
+    【6,10】指導教員名
+\end{textblock}
+
+\textblockcolour{lime}
+\begin{textblock}{4}(13, 11.2)
+    ↓職位の有無は任意
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{5}(15.3, 13.5)
+    【9】↑紙印刷の頃にあった
+
+    押印用のセルを作らない
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{8}(11, 15.8)
+    \noindent
+    【6,13】日付が提出期間内かを確認する 
+
+    \noindent
+    月日に1桁の数値を書くときは0埋めをしない
+\end{textblock}
+
+
+\begin{comment19}
+    \textblockcolour{pink}
+    \begin{textblock}{5}(0.5, 21.3)
+        \noindent
+        【6,10,11】
+        
+        \noindent
+        学部・学籍番号・氏名
+    \end{textblock}
+\end{comment19}
+
+\begin{comment20}
+    \textblockcolour{pink}
+    \begin{textblock}{5}(0.5, 21.3)
+        \noindent
+        【6,10,11】
+        
+        \noindent
+        学部・専攻・学籍番号・氏名
+    \end{textblock}
+\end{comment20}
+
+\textblockcolour{pink}
+\begin{textblock}{6}(14.5, 23)
+    【12】学籍番号のA,B,Cは大文字
+\end{textblock}
+
+\begin{textblock}{7}(11, 28)
+    ←内表紙にページ番号をつけない
+\end{textblock}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 内表紙
+\maketitle
+
+
+% 概要コメント
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\textblockcolour{pink}
+\begin{textblock}{4}(16, 1)
+    \noindent
+    【3】3枚目は「概要」
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{4}(7, 1.5)
+    【6,13】2024年度
+\end{textblock}
+
+
+
+\begin{comment19}
+    \textblockcolour{pink}
+    \begin{textblock}{11}(3, 5.2)
+        \noindent
+        【6,10,11】タイトル・学部・学籍番号・氏名・指導教員
+    \end{textblock}
+\end{comment19}
+
+
+\begin{comment20}
+    \textblockcolour{pink}
+    \begin{textblock}{11}(3, 5.2)
+        \noindent
+        【6,10,11】タイトル・学部・専攻名・学籍番号・氏名・指導教員
+    \end{textblock}
+\end{comment20}
+
+\textblockcolour{lime}
+\begin{textblock}{4}(15, 5.2)
+    ↓職位の有無は任意
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{7}(3, 8.3)
+    【12】↑学籍番号のA,B,Cは大文字
+\end{textblock}
+
+\textblockcolour{PowderBlue}
+\begin{textblock}{6}(8, 13)
+    日本語または英語で執筆する
+\end{textblock}
+
+\textblockcolour{pink}
+\begin{textblock}{7}(11, 26.5)
+    【3】概要は1ページに収める
+\end{textblock}
+
+\begin{textblock}{7}(11, 28)
+    ←概要にページ番号をつけない
+\end{textblock}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 概要
+\jabst{
+\input{./body/0_abstract.tex}    % abstract.texを読み込む
+}
+\makejabstract
+
+% ページ設定
+\pagenumbering{roman}
+\setcounter{page}{1}
+\thispagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\textblockcolour{pink}
+\begin{textblock}{4.5}(16, 1)
+    \noindent
+    【4】4枚目以降が「目次」
+\end{textblock}
+
+\begin{textblock}{10}(6, 7)
+    章の目次は少なくとも2段目（1.1, 1.2...）まで表示する
+
+    この例では3段目（1.1.1）まで表示している
+\end{textblock}
+
+\begin{textblock}{2.75}(18, 10)
+    \noindent
+    【14】目次のページ番号が正しい
+\end{textblock}
+
+\begin{textblock}{2.5}(0.5, 14)
+    \noindent
+    【15】目次の章・節番号に抜けがなく、本文の章・節番号と一致する
+\end{textblock}
+
+\textblockcolour{PowderBlue}
+\begin{textblock}{2.5}(1, 24)
+    \noindent
+    ここの不備は意図的(p.10の例)
+\end{textblock}
+
+\begin{textblock}{10}(10, 25.5)
+    ↓目次のページ番号はローマ数字(i,ii,...)が望ましい
+\end{textblock}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents    % 目次
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\textblockcolour{lime}
+\begin{textblock}{4}(16, 1)
+    図目次は任意
+\end{textblock}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\listoffigures      % 図目次
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\textblockcolour{lime}
+\begin{textblock}{4}(16, 1)
+    表目次は任意
+\end{textblock}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\listoftables       % 表目次
+%\listofprograms        % プログラム目次
+\pagenumbering{arabic}
+
+% 論文本文
+%   論文本文は章や節単位で,いくつかのファイルに分割したほうが編集しやすい。
+\input{./body/1_preface}     % 第1章
+\input{./body/2_related}     % 第2章
+\input{./body/3_approach}    % 第3章
+\input{./body/4_implement}   % 第4章
+\input{./body/5_assessment}  % 第5章
+\input{./body/6_conclusion}  % 第6章
+\input{./body/98_ack}         % 謝辞
+\input{./body/99_bibliography}% 参考文献
+
+%\input{appendix}   % 付録
+\end{document}
